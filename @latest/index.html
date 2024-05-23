@@ -4,10 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/assets/style.css" />
-    <title>Document</title>
+    <title>Panini Sammelbilder</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <output id="output">dfsdfsd</output>
+      <div id="content-wrapper">
+        <h1>Add a Card</h1>
+        <form>
+          <div id="name-div">
+            <input
+              type="text"
+              name=""
+              id="firstName"
+              placeholder="First name" />
+            <input type="text" name="" id="lastName" placeholder="Last name" />
+          </div>
+          <div id="age-div">
+            <input type="number" name="" id="age" placeholder="age" />
+            <select name="" id="select-gender">
+              <option value="0">gender</option>
+              <option value="1">female</option>
+              <option value="2">male</option>
+            </select>
+          </div>
+          <input type="text" name="" id="adress" placeholder="adress" />
+          <input
+            type="text"
+            name=""
+            id="characteristics"
+            placeholder="top3 characteristics" />
+          <input type="text" id="lover" placeholder="top3 lovers" />
+          <textarea
+            name=""
+            id="quote"
+            cols="30"
+            rows="10"
+            placeholder="A famous quote by this person"></textarea>
+          <input type="text" id="image-url" placeholder="image url" />
+          <button type="submit" id="button">Add</button>
+        </form>
+      </div>
+    </main>
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
