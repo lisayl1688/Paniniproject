@@ -63,14 +63,16 @@ function addCharacterToOutput() {
   createPaniniCard();
 }
 
-function melodyPlay() {
-  const melody = document.getElementById("melody") as HTMLAudioElement;
-  console.log(melody);
-  if (melody) {
-    console.log(melody);
-    melody.play();
-  }
-}
+// function melodyPlay() {
+//   const melody = document.getElementById("melody") as HTMLAudioElement;
+//   console.log(melody);
+//   if (melody) {
+//     melody.currentTime = melody.duration - 6;
+//     melody.play();
+//   }
+// }
+
+//? delete Character
 
 //? Panini Card
 function createPaniniCard() {
@@ -84,6 +86,7 @@ function createPaniniCard() {
   const imageElement = document.createElement("img");
   imageElement.src = `${image.value}`;
   imageElement.style.width = "250px";
+  // imageElement.style.height = "250px";
   imageElement.style.boxShadow = "4px 4px 4px grey";
   imageElement.style.borderRadius = "10px";
   card.appendChild(imageElement);
@@ -113,8 +116,22 @@ function createPaniniCard() {
   const quoteElement = document.createElement("p");
   quoteElement.innerText = `Quote: "${quote.value}"`;
   card.appendChild(quoteElement);
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = `Delete`;
+  card.appendChild(deleteButton);
+
+  const changeButton = document.createElement("button");
+  changeButton.innerText = `Change`;
+  card.appendChild(changeButton);
 
   output?.appendChild(card);
+
+  deleteButton.addEventListener("click", () => {
+    function deleteCharacter() {
+      card.remove();
+    }
+    deleteCharacter();
+  });
 }
 
 //? addEventListener
@@ -123,5 +140,62 @@ addButton.addEventListener("click", (event: Event) => {
   const newCharacter = createCharacter();
   addCharacterToArray(newCharacter);
   addCharacterToOutput();
-  melodyPlay();
+  // melodyPlay();
+  startEmojiRain();
 });
+
+// Typdefinition für das Emoji-Element
+type EmojiElement = {
+  emoji: string;
+  x: number;
+  y: number;
+  element: HTMLDivElement;
+};
+
+// Funktion zum Starten des Emoji-Regens
+function startEmojiRain() {
+  const emojis: string[] = ["👠", "👡", "🥿", "👢"]; // Emojis für Schuhe
+  const emojiContainer = document.createElement("div");
+  emojiContainer.id = "emojiContainer";
+  document.body.appendChild(emojiContainer);
+
+  // Schleife zum Erstellen und Einfügen von Emoji-Elementen in das Container-Element
+  for (let i = 0; i < 100; i++) {
+    //  Emojis für den Regen
+    const emojiIndex = Math.floor(Math.random() * emojis.length);
+    const emoji: EmojiElement = {
+      emoji: emojis[emojiIndex],
+      x: Math.random() * window.innerWidth, // Zufällige horizontale Position
+      y: -50 - Math.random() * 100, // Startposition über dem Bildschirm
+      element: document.createElement("div"),
+    };
+
+    emoji.element.innerText = emoji.emoji;
+    emoji.element.style.position = "absolute";
+    emoji.element.style.left = `${emoji.x}px`;
+    emoji.element.style.top = `${emoji.y}px`;
+    emojiContainer.appendChild(emoji.element);
+
+    // Animation für das Fallen
+    emoji.element.animate(
+      [
+        { transform: `translateY(${emoji.y}px)` }, // Startposition
+        { transform: `translateY(${window.innerHeight + 500}px)` }, // Endposition (unterhalb des Bildschirms)
+      ],
+      {
+        duration: 5000, // Dauer der Animation in Millisekunden
+        iterations: 1, // Anzahl der Wiederholungen (1 für einmalige Animation)
+        fill: "forwards", // Behalte den Endzustand der Animation bei
+        easing: "linear", // Lineare Animation (gleichmäßige Geschwindigkeit)
+      }
+    );
+  }
+}
+
+// Event-Listener für den Button "Add" hinzufügen, um den Emoji-Regen zu starten
+// const addButton2 = document.getElementById("button");
+// if (addButton) {
+//   addButton.addEventListener("click", () => {
+//     startEmojiRain();
+//   });
+// }

@@ -9,51 +9,64 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet" />
-    <title>Panini Sammelbilder</title>
+    <title>Sex and the City Cards</title>
   </head>
   <body>
     <main>
-      <output id="output"></output>
-      <div id="content-wrapper">
-        <h1><span class="emoji">✨</span> Add a Card ✨</h1>
-        <form>
-          <div id="name-div">
+      <section>
+        <output id="output"></output>
+        <div id="content-wrapper">
+          <h1>
+            <span class="emoji">✨</span> Add your favorite<br /><img
+              src="./src/assets/logo_satc.png"
+              alt=""
+              id="img-font" />
+            Character✨
+          </h1>
+          <form>
+            <div id="name-div">
+              <input
+                type="text"
+                name=""
+                id="firstName"
+                placeholder="First name" />
+              <input
+                type="text"
+                name=""
+                id="lastName"
+                placeholder="Last name" />
+            </div>
+            <div id="age-div">
+              <input type="number" name="" id="age" placeholder="age" />
+              <select name="" id="select-gender">
+                <option value="0">gender</option>
+                <option value="female">female</option>
+                <option value="male">male</option>
+              </select>
+            </div>
+            <input type="text" name="" id="adress" placeholder="adress" />
             <input
               type="text"
               name=""
-              id="firstName"
-              placeholder="First name" />
-            <input type="text" name="" id="lastName" placeholder="Last name" />
-          </div>
-          <div id="age-div">
-            <input type="number" name="" id="age" placeholder="age" />
-            <select name="" id="select-gender">
-              <option value="0">gender</option>
-              <option value="female">female</option>
-              <option value="male">male</option>
-            </select>
-          </div>
-          <input type="text" name="" id="adress" placeholder="adress" />
-          <input
-            type="text"
-            name=""
-            id="characteristics"
-            placeholder="top3 characteristics" />
-          <input type="text" id="lover" placeholder="top3 lovers" />
-          <textarea
-            name=""
-            id="quote"
-            cols="30"
-            rows="10"
-            placeholder="A famous quote by this person"></textarea>
-          <input type="text" id="image-url" placeholder="image url" />
-          <button type="submit" id="button">Add</button>
-          <audio
-            id="melody"
-            src="./src/assets/Sex and the City.mp3"
-            type="audio/mpeg"></audio>
-        </form>
-      </div>
+              id="characteristics"
+              placeholder="top3 characteristics" />
+            <input type="text" id="lover" placeholder="top3 lovers" />
+            <textarea
+              name=""
+              id="quote"
+              cols="30"
+              rows="10"
+              placeholder="A famous quote by this person"></textarea>
+            <input type="text" id="image-url" placeholder="image url" />
+            <button type="submit" id="button">Add</button>
+            <audio
+              id="melody"
+              src=" https://www.televisiontunes.com/uploads/audio/Sex%20and%20the%20City.mp3 "
+              preload="auto"
+              type="audio/mpeg"></audio>
+          </form>
+        </div>
+      </section>
     </main>
     <script type="module" src="./src/main.ts"></script>
   </body>
