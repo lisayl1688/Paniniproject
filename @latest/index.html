@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/assets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet" />
     <title>Panini Sammelbilder</title>
   </head>
   <body>
     <main>
-      <output id="output">dfsdfsd</output>
+      <output id="output"></output>
       <div id="content-wrapper">
-        <h1>Add a Card</h1>
+        <h1><span class="emoji">✨</span> Add a Card ✨</h1>
         <form>
           <div id="name-div">
             <input
@@ -24,8 +29,8 @@
             <input type="number" name="" id="age" placeholder="age" />
             <select name="" id="select-gender">
               <option value="0">gender</option>
-              <option value="1">female</option>
-              <option value="2">male</option>
+              <option value="female">female</option>
+              <option value="male">male</option>
             </select>
           </div>
           <input type="text" name="" id="adress" placeholder="adress" />
@@ -43,6 +48,10 @@
             placeholder="A famous quote by this person"></textarea>
           <input type="text" id="image-url" placeholder="image url" />
           <button type="submit" id="button">Add</button>
+          <audio
+            id="melody"
+            src="./src/assets/Sex and the City.mp3"
+            type="audio/mpeg"></audio>
         </form>
       </div>
     </main>
