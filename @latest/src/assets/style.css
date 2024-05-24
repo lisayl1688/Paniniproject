@@ -73,15 +73,22 @@ button {
 
 .paniniCard {
   font-family: "Inter", sans-serif;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.352);
+  text-align: justify;
+
+  background-color: rgba(255, 255, 255, 0.489);
   width: 300px;
-  height: 90%;
+  height: auto;
   border-radius: 20px;
   padding: 20px;
-  color: rgb(255, 255, 255);
+  color: #f53061;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.312);
   font-weight: 200;
+  margin: 0 1rem;
+}
+
+.paniniCard p {
+  margin: 15px 0;
+  font-weight: 700;
 }
 
 #output {
